@@ -5,6 +5,7 @@ import java.util.Objects;
 import java.util.StringJoiner;
 
 public class Person {
+
     private final String firstName;
     private final String lastName;
     private final int age;

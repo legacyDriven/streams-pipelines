@@ -3,6 +3,7 @@ package com.efimchick.ifmo.util;
 import java.util.Map;
 
 public class CourseResult {
+
     private final Person person;
     private final Map<String, Integer> taskResults;
 
