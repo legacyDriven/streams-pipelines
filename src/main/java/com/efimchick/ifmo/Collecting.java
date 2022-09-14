@@ -41,10 +41,10 @@ public class Collecting {
 
     public Map<Person, Double> totalScores(Stream<CourseResult> results) {
         return results.collect(Collectors.toMap(CourseResult::getPerson,
-                this::countCourseResult));
+                this::countAverageCourseResult));
     }
 
-    private double countCourseResult(CourseResult result){
+    private double countAverageCourseResult(CourseResult result){
         long res = result.getTaskResults().keySet().stream().filter(n->n.contains(" ")).count();
         if(res>0) {
             return result.getTaskResults().values().stream()
