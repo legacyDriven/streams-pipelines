@@ -32,7 +32,6 @@ public class Collecting {
                 .boxed()
                 .collect(Collectors.groupingBy(s -> s % divisor, Collectors.summingInt(x -> x)));
     }
-    ////////////////////////////////////////
 
     public static void main(String[] args) {
         Random random = new Random(654);
@@ -51,7 +50,7 @@ public class Collecting {
                     .mapToInt(Integer::intValue)
                     .average()
                     .orElse(0d);
-        }else {
+        } else {
             return Stream.concat(Stream.of(0), result.getTaskResults().values().stream())
                     .mapToInt(Integer::intValue)
                     .average()
@@ -60,7 +59,7 @@ public class Collecting {
     }
 
     public double averageTotalScore(Stream<CourseResult> results) {
-        return 0d;
+        return results.mapToDouble(this::countAverageCourseResult).average().orElse(0d);
     }
 
 
